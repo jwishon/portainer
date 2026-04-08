@@ -19,6 +19,7 @@ import (
 )
 
 func Test_userRemoveAccessToken(t *testing.T) {
+	t.Parallel()
 	is := assert.New(t)
 
 	_, store := datastore.MustNewTestStore(t, true, true)

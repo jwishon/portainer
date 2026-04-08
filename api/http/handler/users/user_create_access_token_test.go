@@ -21,6 +21,7 @@ import (
 )
 
 func Test_userCreateAccessToken(t *testing.T) {
+	t.Parallel()
 	is := assert.New(t)
 
 	_, store := datastore.MustNewTestStore(t, true, true)
@@ -113,6 +114,7 @@ func Test_userCreateAccessToken(t *testing.T) {
 }
 
 func Test_userAccessTokenCreatePayload(t *testing.T) {
+	t.Parallel()
 	tests := []struct {
 		payload    userAccessTokenCreatePayload
 		shouldFail bool

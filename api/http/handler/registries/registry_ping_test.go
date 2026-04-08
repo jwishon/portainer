@@ -20,6 +20,7 @@ import (
 )
 
 func Test_categorizeRegistryError(t *testing.T) {
+	t.Parallel()
 	tests := []struct {
 		name        string
 		err         error
@@ -109,6 +110,7 @@ func Test_categorizeRegistryError(t *testing.T) {
 }
 
 func Test_registryPingPayload_Validate(t *testing.T) {
+	t.Parallel()
 	tests := []struct {
 		name    string
 		payload registryPingPayload
@@ -187,6 +189,7 @@ func Test_registryPingPayload_Validate(t *testing.T) {
 }
 
 func TestHandler_pingRegistry(t *testing.T) {
+	t.Parallel()
 	_, store := datastore.MustNewTestStore(t, false, false)
 
 	handler := NewHandler(testhelpers.NewTestRequestBouncer())
@@ -289,6 +292,7 @@ func TestHandler_pingRegistry(t *testing.T) {
 }
 
 func TestHandler_pingRegistry_DockerHubURL(t *testing.T) {
+	t.Parallel()
 	_, store := datastore.MustNewTestStore(t, false, false)
 
 	handler := NewHandler(testhelpers.NewTestRequestBouncer())

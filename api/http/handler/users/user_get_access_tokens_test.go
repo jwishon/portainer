@@ -20,6 +20,7 @@ import (
 )
 
 func Test_userGetAccessTokens(t *testing.T) {
+	t.Parallel()
 	is := assert.New(t)
 
 	_, store := datastore.MustNewTestStore(t, true, true)
@@ -123,6 +124,7 @@ func Test_userGetAccessTokens(t *testing.T) {
 }
 
 func Test_hideAPIKeyFields(t *testing.T) {
+	t.Parallel()
 	apiKey := &portainer.APIKey{
 		ID:          1,
 		UserID:      2,

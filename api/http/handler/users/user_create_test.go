@@ -22,6 +22,7 @@ func (m mockPasswordStrengthChecker) Check(string) bool {
 }
 
 func TestConcurrentUserCreation(t *testing.T) {
+	t.Parallel()
 	_, store := datastore.MustNewTestStore(t, true, false)
 
 	h := &Handler{

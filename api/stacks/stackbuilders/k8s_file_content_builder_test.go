@@ -16,6 +16,7 @@ func (m mockDeploymentConfiger) GetResponse() string {
 }
 
 func TestGetResponse(t *testing.T) {
+	t.Parallel()
 	c := &K8sStackFileContentBuilder{
 		FileContentMethodStackBuilder: FileContentMethodStackBuilder{
 			StackBuilder: StackBuilder{

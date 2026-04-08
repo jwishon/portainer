@@ -17,6 +17,7 @@ import (
 )
 
 func TestHandler_registryUpdate(t *testing.T) {
+	t.Parallel()
 	_, store := datastore.MustNewTestStore(t, false, false)
 
 	registry := &portainer.Registry{Type: portainer.ProGetRegistry}

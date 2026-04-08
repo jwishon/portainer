@@ -18,6 +18,7 @@ import (
 )
 
 func TestCustomTemplateFile(t *testing.T) {
+	t.Parallel()
 	_, ds := datastore.MustNewTestStore(t, true, false)
 	require.NotNil(t, ds)
 

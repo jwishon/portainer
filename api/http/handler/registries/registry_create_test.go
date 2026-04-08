@@ -17,6 +17,7 @@ import (
 )
 
 func Test_registryCreatePayload_Validate(t *testing.T) {
+	t.Parallel()
 	basePayload := registryCreatePayload{Name: "Test registry", URL: "http://example.com"}
 	t.Run("Can't create a ProGet registry if BaseURL is empty", func(t *testing.T) {
 		payload := basePayload
@@ -54,6 +55,7 @@ func Test_registryCreatePayload_Validate(t *testing.T) {
 }
 
 func TestHandler_registryCreate(t *testing.T) {
+	t.Parallel()
 	_, store := datastore.MustNewTestStore(t, false, false)
 
 	payload := registryCreatePayload{

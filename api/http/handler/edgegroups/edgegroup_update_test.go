@@ -17,7 +17,8 @@ import (
 )
 
 func TestEdgeGroupUpdateHandler(t *testing.T) {
-	_, store := datastore.MustNewTestStore(t, true, true)
+	t.Parallel()
+	_, store := datastore.MustNewTestStore(t, false, true)
 
 	handler := NewHandler(testhelpers.NewTestRequestBouncer())
 	handler.DataStore = store
@@ -70,7 +71,8 @@ func TestEdgeGroupUpdateHandler(t *testing.T) {
 }
 
 func TestEdgeGroupUpdatePanic(t *testing.T) {
-	_, store := datastore.MustNewTestStore(t, true, true)
+	t.Parallel()
+	_, store := datastore.MustNewTestStore(t, false, true)
 
 	handler := NewHandler(testhelpers.NewTestRequestBouncer())
 	handler.DataStore = store

@@ -7,6 +7,7 @@ import (
 )
 
 func TestK8SUrlBuilderGetResponse(t *testing.T) {
+	t.Parallel()
 	c := &KubernetesStackUrlBuilder{
 		UrlMethodStackBuilder: UrlMethodStackBuilder{
 			StackBuilder: StackBuilder{

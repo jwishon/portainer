@@ -17,6 +17,7 @@ import (
 )
 
 func Test_getEndpointTypes(t *testing.T) {
+	t.Parallel()
 	endpoints := []portainer.Endpoint{
 		{ID: 1, Type: portainer.DockerEnvironment},
 		{ID: 2, Type: portainer.AgentOnDockerEnvironment},
@@ -54,6 +55,7 @@ func Test_getEndpointTypes(t *testing.T) {
 }
 
 func Test_getEndpointTypes_failWhenEndpointDontExist(t *testing.T) {
+	t.Parallel()
 	datastore := testhelpers.NewDatastore(testhelpers.WithEndpoints([]portainer.Endpoint{}))
 
 	_, err := getEndpointTypes(datastore, roar.FromSlice([]portainer.EndpointID{1}))
@@ -61,7 +63,8 @@ func Test_getEndpointTypes_failWhenEndpointDontExist(t *testing.T) {
 }
 
 func TestEdgeGroupListHandler(t *testing.T) {
-	_, store := datastore.MustNewTestStore(t, true, true)
+	t.Parallel()
+	_, store := datastore.MustNewTestStore(t, false, true)
 
 	handler := NewHandler(testhelpers.NewTestRequestBouncer())
 	handler.DataStore = store

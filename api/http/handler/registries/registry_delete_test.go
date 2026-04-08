@@ -48,6 +48,7 @@ func (s *deleteSpyKubeClient) RemoveImagePullSecretFromServiceAccount(namespace,
 // --- cleanupRegistryFromNamespaces unit tests ---
 
 func TestCleanupRegistryFromNamespaces(t *testing.T) {
+	t.Parallel()
 	const registryID portainer.RegistryID = 3
 	const endpointID portainer.EndpointID = 1
 
@@ -98,6 +99,7 @@ func TestCleanupRegistryFromNamespaces(t *testing.T) {
 // --- deleteKubernetesSecrets integration tests ---
 
 func TestDeleteKubernetesSecrets(t *testing.T) {
+	t.Parallel()
 	const registryID portainer.RegistryID = 3
 	const endpointID portainer.EndpointID = 1
 
