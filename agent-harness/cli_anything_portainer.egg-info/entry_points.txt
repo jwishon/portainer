@@ -1,0 +1,2 @@
+[console_scripts]
+cli-anything-portainer = cli_anything.portainer.portainer_cli:main
